@@ -2,8 +2,7 @@
 name: Informe de error
 about: Crea un informe que nos ayude a mejorar
 title: ''
-labels: bug, documentation, duplicate, enhancement, good first issue, help wanted,
-  invalid, question, wontfix
+labels: bug
 assignees: samuelV101
 
 ---

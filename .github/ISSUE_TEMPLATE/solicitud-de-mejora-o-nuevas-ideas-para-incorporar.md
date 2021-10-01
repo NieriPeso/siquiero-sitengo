@@ -2,8 +2,7 @@
 name: Solicitud de mejora o nuevas ideas para incorporar
 about: Sugerir una idea para este proyecto
 title: ''
-labels: bug, documentation, duplicate, enhancement, good first issue, help wanted,
-  invalid, question, wontfix
+labels: enhancement
 assignees: samuelV101
 
 ---
