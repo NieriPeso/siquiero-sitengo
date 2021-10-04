@@ -18,12 +18,12 @@ class Home extends Component {
                 <section>
 
                     <div className="jumbotron">
-                        <h1 className="display-4">Hello, world!</h1>
-                        <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                        <hr className="my-4" />
-                        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                        <h1 className="display-4">Proyecto Siquiero Sitengo (PSS)</h1>
                         <p className="lead">
-                            <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                            Buscamos ser una plataforma p2p que ofrece otro metodo de intercambio de valores, donde cualquier Ñeri pueda crear anuncios de sus necesidades, para que luego, otro usuario de la comunidad pueda ofertar su mejor propuesta.
+                        </p>
+                        <p className="lead">
+                            <a className="btn btn-primary btn-lg" href="#sobre-el-proyecto" role="button">Sobre el proyecto</a>
                         </p>
                     </div>
 

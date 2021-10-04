@@ -44,10 +44,22 @@ class Post
      */
     private $offers;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Category::class, mappedBy="posts")
+     */
+    private $categories;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Tag::class, mappedBy="posts")
+     */
+    private $tags;
+
     public function __construct()
     {
         $this->create_time = new \DateTime();
         $this->offers = new ArrayCollection();
+        $this->categories = new ArrayCollection();
+        $this->tags = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -128,6 +140,60 @@ class Post
             if ($offer->getPost() === $this) {
                 $offer->setPost(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Category[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+            $category->addPost($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        if ($this->categories->removeElement($category)) {
+            $category->removePost($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tag[]
+     */
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+            $tag->addPost($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        if ($this->tags->removeElement($tag)) {
+            $tag->removePost($this);
         }
 
         return $this;

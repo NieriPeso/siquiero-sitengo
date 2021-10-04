@@ -54,10 +54,22 @@ class Product
      */
     private $transactions;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Category::class, mappedBy="products")
+     */
+    private $categories;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Tag::class, mappedBy="products")
+     */
+    private $tags;
+
     public function __construct()
     {
         $this->create_time = new \DateTime();
         $this->transactions = new ArrayCollection();
+        $this->categories = new ArrayCollection();
+        $this->tags = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -162,6 +174,60 @@ class Product
             if ($transaction->getProduct() === $this) {
                 $transaction->setProduct(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Category[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+            $category->addProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        if ($this->categories->removeElement($category)) {
+            $category->removeProduct($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tag[]
+     */
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+            $tag->addProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        if ($this->tags->removeElement($tag)) {
+            $tag->removeProduct($this);
         }
 
         return $this;
