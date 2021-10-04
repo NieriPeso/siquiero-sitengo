@@ -23,12 +23,13 @@ $red: #dc3545;
 $orange: #fd7e14;
 $yellow: #ffc107;
 $green: #198754;
+$green_nieri: #22a279;
 $teal: #20c997;
 $cyan: #0dcaf0;
 // scss-docs-end color-variables
 
 // scss-docs-start theme-color-variables
-$primary: $blue;
+$primary: $green_nieri;
 $secondary: $gray-600;
 $success: $green;
 $info: $cyan;

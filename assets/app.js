@@ -5,7 +5,6 @@ import Header from './controllers/Header';
 import Home from './controllers/Home';
 
 import './styles/app.scss';
-import './styles/home.scss';
 
 class App extends Component {
     render() {
