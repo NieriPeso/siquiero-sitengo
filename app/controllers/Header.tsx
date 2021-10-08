@@ -33,8 +33,8 @@ const Header: React.FC = () => {
                         </Nav>
 
                         <Nav className="mr-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-                            <Nav.Link href="#action1"><strong>Registrate</strong></Nav.Link>
-                            <Nav.Link href="#action2"><strong>Iniciar sesión</strong></Nav.Link>
+                            <Nav.Link href="registro"><strong>Registrate</strong></Nav.Link>
+                            <Nav.Link href="login"><strong>Iniciar sesión</strong></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

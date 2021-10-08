@@ -32,11 +32,11 @@ class AppFixtures extends Fixture implements ContainerAwareInterface
     {
 
         $user = new User();
-        $user->setEmail('admin@givt.com.uy')
+        $user->setEmail('admin@nieri.uy')
             ->setRoles(['ROLE_SUPER_ADMIN'])
             ->setPassword($this->passwordHasher->hashPassword(
                 $user,
-                'administrador@givt2021'
+                '123ft_<'
             ));
         $manager->persist($user);
         $manager->flush();
