@@ -7,8 +7,7 @@ import {
 
 import '../styles/home.scss';
 
-import FeaturedPurchases from "../components/FeaturedPurchases";
-import FeaturedSales from '../components/FeaturedSales';
+import {FeaturedPurchases, FeaturedSales} from "../components";
 
 const Home: React.FC = () => {
     return (

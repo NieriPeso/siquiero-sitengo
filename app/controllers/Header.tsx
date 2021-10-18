@@ -11,6 +11,8 @@ import {
     Image,
 } from 'react-bootstrap';
 
+import { favicon2 } from '../assets/images';
+
 const Header: React.FC = () => {
 
     return (
@@ -18,7 +20,8 @@ const Header: React.FC = () => {
             <Navbar bg="dark" variant="dark" expand="lg">
                 <Container className="bg-primary rounded">
                     <Navbar.Brand as={Link} to="inicio">
-                        <Image src={require('../assets/images/favicon2.png')} width="48" height="38" /></Navbar.Brand>
+                        <Image src={favicon2} width="48" height="38" />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll" className="justify-content-between" role="navigation">
                         <Nav className="mr-auto my-2 my-lg-0" style={{ maxHeight: '350px' }} navbarScroll>
@@ -33,6 +36,7 @@ const Header: React.FC = () => {
                         </Nav>
 
                         <Nav className="mr-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+                            <Nav.Link as={Link} to="perfil"><strong>Perfil</strong></Nav.Link>
                             <Nav.Link href="registro"><strong>Registrate</strong></Nav.Link>
                             <Nav.Link href="login"><strong>Iniciar sesión</strong></Nav.Link>
                         </Nav>
